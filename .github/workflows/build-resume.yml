@@ -27,3 +27,5 @@ jobs:
           path: build/resume.pdf
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
+      - name: List files
+        run: ls -R
