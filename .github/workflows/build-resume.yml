@@ -15,14 +15,14 @@ jobs:
           root_file: resume/resume.tex
           compiler: latexmk
       - name: Upload LaTeX log
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: latex-log
           path: resume/resume.log
       - name: Deploy PDF to Pages
         uses: actions/configure-pages@v3
       - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: build/resume.pdf
       - name: Deploy to GitHub Pages
