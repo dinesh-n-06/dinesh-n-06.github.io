@@ -1,0 +1,20 @@
+name: Build Résumé PDF
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume/resume.tex
+          compiler: latexmk
+      - name: Deploy PDF to Pages
+        uses: actions/configure-pages@v3
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: build/resume.pdf
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
