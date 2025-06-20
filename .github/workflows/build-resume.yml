@@ -22,7 +22,7 @@ jobs:
       - name: Deploy PDF to Pages
         uses: actions/configure-pages@v3
       - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
           path: build/resume.pdf
       - name: Deploy to GitHub Pages
